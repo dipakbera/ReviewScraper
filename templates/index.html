@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Search Page</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Flipkart Product Search</h1>
+
+    <div class="form">
+        <form action="/scrap" method="POST">
+            <label for="pageselect">Select Number of Pages</label>
+
+            <select id="pageselect" name="pageselect">
+  <option value="custom">custom</option>
+  <option value="all">all</option>
+</select>
+
+            <input type="text" name="pages" id="pages">Pages(Ignore if you select all)
+            <br>
+            <input type="text" name="content" id="content">
+            <input type="submit" value="Search this product">
+        </form>
+    </div>
+</div>
+{% endblock %}
